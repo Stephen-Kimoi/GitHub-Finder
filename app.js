@@ -4,18 +4,20 @@ const github = new Github;
 //Init UI 
 const ui = new UI; 
 
-// Search input 
-const searchUser = document.getElementById('searchUser'); 
+// Event listener for searchUser function
+document.getElementById('searchBtn').addEventListener('click', searchUser)
 
 // Event listener for searchUser 
-searchUser.addEventListener('keyup', (e) => {
-    const userText = e.target.value; 
+function searchUser(e) {  
 
+    const userText = document.getElementById('searchUser').value; 
+
+    console.log(userText)  
     if (userText !== '') {
        // Make http call 
        github.getUser(userText) 
          .then(data => {
-            
+            console.log(data)
             if (data.profile.message === 'Not Found') {
                // Show an alert message  
                setTimeout( () => {
@@ -32,5 +34,7 @@ searchUser.addEventListener('keyup', (e) => {
          })
     } else {
       ui.clearProfile(); 
-    }
-}); 
+    } 
+
+    e.preventDefault(); 
+}

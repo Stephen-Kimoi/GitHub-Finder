@@ -16,11 +16,18 @@
     </nav>
 
     <div class="container searchContainer">
+
         <div class="search card card-body mt-3">
-            <h1>Search GitHub Users</h1> 
-            <p class="lead">Enter a username to fetch user profile and repos</p>
-            <input type="text" class="form-input" id="searchUser" placeholder="Search GitHub Username...">
-        </div>
+            <form>
+                <h1>Search GitHub Users</h1> 
+                <p class="lead">Enter a username to fetch user profile and repos</p>
+                <input type="text" class="form-input form-control" id="searchUser" placeholder="Search GitHub Username...">
+
+                <button class="btn btn-success mt-3 form-control" id="searchBtn">Search</button>
+            </form>
+
+        </div> 
+
     </div>
     <br>
     <div id="profile"></div>
