@@ -11,8 +11,7 @@ document.getElementById('searchBtn').addEventListener('click', searchUser)
 function searchUser(e) {  
 
     const userText = document.getElementById('searchUser').value; 
-
-    console.log(userText)  
+    
     if (userText !== '') {
        // Make http call 
        github.getUser(userText) 
